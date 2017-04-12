@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "蓝牙小程序调试工具",
+    "navigationBarTextStyle":"black"
+  },
+  "debug":true
+}

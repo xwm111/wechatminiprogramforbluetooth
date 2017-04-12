@@ -1,0 +1,72 @@
+view {
+  display: inline-block;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.section {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  margin: auto;
+  padding: auto;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.switch {
+  position: relative;
+  float: right;
+  right: 0px;
+}
+
+button {
+  background: red\;
+}
+
+.list-item {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx; 
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px dashed #000;
+}
+
+.list-item text {
+   margin-top: 10rpx;
+}
+
+
+.list-item button {
+  margin-right: 10rpx;
+}
+
+.deviceconnected{
+  background-color:sandybrown
+}
+
+.recieve{
+  
+  width: 100%
+}
+
+.recieve textarea{
+  border: 1px dashed;
+  width: 100%
+}
+
+input{
+  display: block;
+  border: 1px dashed;
+  width: 200px;
+}
+

@@ -1,0 +1,39 @@
+
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="content">
+      <text>蓝牙初始化:</text>
+      <text>{{isbluetoothready?"ok":"尚未初始化"}}</text>
+    </view>
+    <view class="switch">
+      <switch checked="{{isbluetoothready}}" bindchange="switchBlueTooth" />
+    </view>
+  </view>
+  <view class="section" hidden="{{!isbluetoothready}}">
+    <button type="default" size="{{primarySize}}" loading="{{searchingstatus}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="searchbluetooth"> {{searchingstatus?"搜索中":"搜索蓝牙"}} </button>
+  </view>
+  <block wx:for="{{devices}}">
+    <view class="section" hidden="{{!isbluetoothready}}">
+      <view class="list-item {{deviceconnected?'deviceconnected':''}}">
+        <text>设备名称:{{item.name}}</text>
+        <text>设备ID:{{item.deviceId}}</text>
+        <button id="{{item.deviceId}}" type="default" size="mini" bindtap="connectTO"> {{deviceconnected?"已连接":"连接"}} </button>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{deviceconnected&&isbluetoothready}}">
+    <view class="recieve">
+      <text>数据接收</text>
+      <textarea disabled="true" value="{{receivedata}}" />
+    </view>
+    <view class="send">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <text>发送数据:</text>
+        <input name="senddata"/>
+        <button size="mini" formType="submit">发送 </button>
+        <button size="mini" formType="reset">清空</button>
+      </form>
+    </view>
+  </block>
+</view>
