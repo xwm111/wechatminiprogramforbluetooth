@@ -16,4 +16,4 @@ please modify the serviceId and characteristicId to match your bluetooth device
 
 
 
-QQ:1274263
+Q群：54073007
