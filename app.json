@@ -1,12 +1,29 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index",
+    "pages/bluetooth/bluetooth"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "蓝牙小程序调试工具",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+
+    "borderStyle": "white",
+
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/homeselected.png",
+      "text": "简单"
+    }, {
+      "pagePath": "pages/bluetooth/bluetooth",
+      "iconPath": "images/exam.png",
+      "selectedIconPath": "images/examselected.png",
+      "text": "通用"
+    }]
   },
   "debug":true
 }

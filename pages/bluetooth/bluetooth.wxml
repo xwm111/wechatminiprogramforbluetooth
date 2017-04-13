@@ -1,0 +1,48 @@
+
+<!--pages/tool/tool.wxml-->
+<view class=".container">
+  <view class="bluetoothswitch">
+    <text>功能启用</text>
+    <switch bindchange="switchChange" />
+  </view>
+  <view class="errmsg">{{errmsg}} </view>
+  <view class="actioninfo">{{actioninfo}} </view>
+  <view class="searchingstatus">{{searchingstatus}} </view>
+  <view class="bluetoothswitch">
+    <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="searchbluetooth" hover-class="other-button-hover"> 搜索蓝牙 </button>
+  </view>
+    <view class="venues_box">
+    <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="stopsearch" hover-class="other-button-hover">停止搜索蓝牙 </button>
+  </view>
+  <view class="venues_box">
+    <view class="venues_list">
+      <block wx:for="{{devices}}" wx:key="{{test}}">
+        <view class="venues_item">
+          <text>设备名称:{{item.name}}</text>
+          <text>设备ID:{{item.deviceId}}</text>
+          <text>连接状态:{{connected?"已连接":"未连接"}}</text>
+          <view class="section">
+           <text>接收到消息</text>
+           <view class="section">
+            <textarea  auto-height />
+          </view>
+           </view>
+           <view class="section">
+            <text>发送消息</text>
+            <input   text="text" placeholder="请输入信息" bindinput="inputTextchange" />
+            <button bindtap="sendtoequ">发送</button>
+            <button bindtap="recieveequ">开始监听接收消息</button>
+          </view>
+          <button id="{{item.deviceId}}" type="default" size="20px" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="connectTO" hover-class="other-button-hover"> 连接设备 </button>
+           <button id="{{item.deviceId}}" type="default" size="20px" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="getAllservice" hover-class="other-button-hover"> 获取蓝牙设备所有 service（服务）</button>
+        </view>
+        <block wx:for="{{services}}" wx:key="{{sid}}">
+          <view class="service">
+              <text bindtap="linkto" id="{{item.uuid}}">serviceId(uuid):{{item.uuid}}</text>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+</view>
