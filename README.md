@@ -10,3 +10,8 @@ please modify the serviceId and characteristicId to match your bluetooth device
 
 2017-04-13
 增加通用模块，发现设备之后能够搜索设备的serviceId和搜索在该serviceId下的characteristicId（serviceId目前使用的是第一个，如有需要使用其他的请自行修改)
+
+
+
+
+QQ:1274263
